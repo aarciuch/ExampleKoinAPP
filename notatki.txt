@@ -1,0 +1,49 @@
+dokumentacja
+    Google publikuje wszystko tutaj:
+    https://developer.android.com/jetpack/compose/navigation (developer.android.com in Bing)
+    Tam znajdziesz:
+        - nazwę biblioteki,
+        - aktualną wersję,
+        - przykład użycia.
+
+
+    biblioteki:
+    group : name : version
+    androidx.navigation : navigation-compose : 2.7.7
+    com.squareup.retrofit2:retrofit:2.11.0
+    io.insert-koin:koin-androidx-compose:3.5.3
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+
+
+
+
+
+*group:
+| group                     | co oznacza                                    |
+| ---                       | ---                                           |
+| androidx.compose          | biblioteki Jetpack Compose                    |
+| androidx.navigation       | Jetpack Navigation                            |
+| androidx.room             | Room ORM                                      |
+| io.insert-koin            | Koin DI                                       |
+| com.squareup.retrofit2    | Retrofit                                      |
+| org.jetbrains.kotlinx     | biblioteki Kotlin (coroutines, serialization) |
+
+*name:
+| biblioteka                | name                                           |
+| ---                       | ---                                            |
+| Compose UI                | ui                                             |
+| Compose Material          | material                                       |
+| Navigation Compose        | navigation-compose                             |
+| Room runtime              | room-runtime                                   |
+| Retrofit                  | retrofit                                       |
+| Koin Compose              | koin-androidx-compose                          |
+
+*version:
+Przykłady:
+Compose: 1.6.7
+Navigation: 2.7.7
+Koin: 3.5.3
+Retrofit: 2.11.0
+Room: 2.6.1
