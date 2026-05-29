@@ -32,7 +32,7 @@ fun BottomNavigationBar(navController: NavController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 8.dp, start = 8.dp, end = 8.dp, bottom = 24.dp),
+            .padding(top = 8.dp, start = 8.dp, end = 8.dp, bottom = 48.dp),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
         Screens.values().forEach { screen ->

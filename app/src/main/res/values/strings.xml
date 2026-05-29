@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">ExampleKoinAPP</string>
 
+    <string name="top_bar_title">Android Dev Showcase</string>
+
     <string name="home">Home</string>
-    <string name="page_1">Page 1</string>
+
+    <string name="page_1">Sensors</string>
+    <string name="light_value">Light value = %.2f</string>
+    <string name="sensor_light_unavailable">Light sensor is unavailable</string>
+    <string name="sensor_acc_unavailable">Accelerometer is unavailable</string>
+    <string name="proximity_value">proximity value = %.2f</string>
+    <string name="sensor_proximity_unavailable">Proximity sensor is unavailable</string>
+
     <string name="page_2">Page 2</string>
 
 </resources>
