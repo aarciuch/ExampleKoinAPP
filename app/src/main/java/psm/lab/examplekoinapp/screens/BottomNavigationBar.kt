@@ -27,7 +27,6 @@ fun BottomNavigationBar(navController: NavController) {
 
     val currentRoute = navController.currentBackStackEntryAsState().
             value?.destination?.route
-    val colors = listOf(Color.Red, Color.Green, Color.Blue)
 
     Row(
         modifier = Modifier
@@ -35,7 +34,7 @@ fun BottomNavigationBar(navController: NavController) {
             .padding(top = 8.dp, start = 8.dp, end = 8.dp, bottom = 48.dp),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        Screens.values().forEach { screen ->
+        Screens.entries.forEach { screen ->
             val selected = currentRoute == screen.route
 
             Column(

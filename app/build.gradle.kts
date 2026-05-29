@@ -1,7 +1,3 @@
-import com.android.tools.r8.internal.io
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
