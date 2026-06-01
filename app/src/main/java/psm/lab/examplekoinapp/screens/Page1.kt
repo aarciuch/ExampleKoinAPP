@@ -23,6 +23,9 @@ fun Page1(vm: SensorsVM = koinViewModel()) {
     val proximity by vm.proximity.collectAsState()
     val hasProximitySensor by vm.hasProximitySensor.collectAsState()
 
+    val azimuth by vm.azimuth.collectAsState()
+    val hasRotationVector by vm.hasRotationVecorSensor.collectAsState()
+
 
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event->
@@ -38,8 +41,8 @@ fun Page1(vm: SensorsVM = koinViewModel()) {
         }
     }
 
-    SensorsGrid(light, acc, proximity,
-                hasLightSensor, hasAccSensor, hasProximitySensor)
+    SensorsGrid(light, acc, proximity, azimuth,
+                hasLightSensor, hasAccSensor, hasProximitySensor, hasRotationVector)
 }
 
 

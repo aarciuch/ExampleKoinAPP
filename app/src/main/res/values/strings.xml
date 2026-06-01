@@ -11,6 +11,9 @@
     <string name="sensor_acc_unavailable">Accelerometer is unavailable</string>
     <string name="proximity_value">proximity value = %.2f</string>
     <string name="sensor_proximity_unavailable">Proximity sensor is unavailable</string>
+    <string name="sensor_rotation_vector_unavailable">Rotation vector sensor is unavailable</string>
+    <string name="azimuth_value">azimuth = %.0f°</string>
+
 
     <string name="page_2">Page 2</string>
 

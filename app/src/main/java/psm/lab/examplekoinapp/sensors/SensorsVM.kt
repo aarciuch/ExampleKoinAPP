@@ -32,6 +32,14 @@ class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
     private val _proximity = MutableStateFlow(0.0f)
     val proximity: StateFlow<Float> = _proximity.asStateFlow()
 
+
+    // ******************** Magnetometer
+    private val rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+    private val _hasRotationVecorSensor = MutableStateFlow(rotationVectorSensor != null)
+    val hasRotationVecorSensor: StateFlow<Boolean> = _hasRotationVecorSensor.asStateFlow()
+    private val _azimuth= MutableStateFlow(0.0f)
+    val azimuth: StateFlow<Float> = _azimuth.asStateFlow()
+
     // -----------------------------------------------------------------------------------
     private val listener = object : SensorEventListener {
         override fun onAccuracyChanged(p0: Sensor?, p1: Int) { }
@@ -52,6 +60,19 @@ class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
                 Log.i("SENSOR", "Proximity = ${p0.values[0]}")
                 p0.values?.firstOrNull()?.let { _proximity.value = it }
             }
+            if (p0?.sensor?.type == Sensor.TYPE_ROTATION_VECTOR) {
+                val rotationMatrix = FloatArray(9)
+                SensorManager.getRotationMatrixFromVector(rotationMatrix, p0.values)
+
+                val orientation = FloatArray(3)
+                SensorManager.getOrientation(rotationMatrix, orientation)
+
+                val azimuthRad = orientation[0]
+                val azimuthDeg = Math.toDegrees(azimuthRad.toDouble()).toFloat()
+                _azimuth.value = (azimuthDeg + 360) % 360
+                Log.i("KOMPAS", "RAD = ${azimuthRad}, DEG = ${azimuthDeg}, A = ${azimuth.value}")
+
+            }
         }
     }
 
@@ -70,6 +91,11 @@ class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
             sensorManager.registerListener(listener,
                 it,
                 SensorManager.SENSOR_DELAY_UI)
+        }
+        rotationVectorSensor?.let {
+            sensorManager.registerListener(listener,
+                it,
+                SensorManager.SENSOR_DELAY_FASTEST)
         }
     }
 
