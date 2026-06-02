@@ -22,6 +22,20 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 
+/**
+ * Bottom navigation bar displayed across the main screens of the application.
+ *
+ * The bar renders a set of navigation items defined in [Screens], each consisting
+ * of an icon and a text label. The currently active destination is highlighted
+ * using a subtle background indicator. Tapping an item triggers navigation to
+ * the corresponding route using the provided [NavController].
+ *
+ * This composable is intended to be used inside a [Scaffold] as the `bottomBar`
+ * component and supports single-top navigation to avoid duplicate destinations
+ * in the back stack.
+ *
+ * @param navController controller used to manage navigation between screens
+ */
 @Composable
 fun BottomNavigationBar(navController: NavController) {
 
@@ -65,5 +79,4 @@ fun BottomNavigationBar(navController: NavController) {
             }
         }
     }
-
 }

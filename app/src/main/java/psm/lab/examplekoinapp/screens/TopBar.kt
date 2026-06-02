@@ -22,6 +22,17 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
+
+/**
+ * Top-level application bar displayed at the top of all primary screens.
+ *
+ * The bar contains a subtle fade-in animation and a decorative sparkle icon
+ * placed next to the title text. The title is centered horizontally within
+ * the available width, providing a clean and minimalistic visual style.
+ *
+ * This composable does not handle navigation actions and is intended purely
+ * for visual presentation of the app header.
+ */
 @Composable
 fun TopBar() {
     val alpha by animateFloatAsState(

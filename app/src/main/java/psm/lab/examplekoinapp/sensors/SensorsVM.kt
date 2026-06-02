@@ -10,37 +10,94 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
+/**
+ * ViewModel responsible for managing real‑time hardware sensor data and exposing
+ * it as observable state to the Jetpack Compose UI.
+ *
+ * The ViewModel registers listeners for all available sensors (light,
+ * accelerometer, proximity and rotation vector) and updates corresponding
+ * [StateFlow] objects. Each sensor has a dedicated availability flag to allow
+ * the UI to gracefully handle devices lacking specific hardware components.
+ *
+ * Sensor listeners are registered and unregistered explicitly through
+ * [startListening] and [stopListening], allowing lifecycle-aware control from
+ * Compose screens.
+ *
+ * @property sensorManager Android system service used to access hardware sensors.
+ */
 class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
-    // **************** Light
+
+    // -------------------------------------------------------------------------
+    // Light sensor
+    //
+
+    /** Light sensor instance or null if the device does not support it. */
     private val lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+
+    /** Indicates whether the device has a light sensor. */
     private val _hasLightSensor = MutableStateFlow(lightSensor != null)
     val hasLightSensor: StateFlow<Boolean> = _hasLightSensor.asStateFlow()
+
+    /** Current light intensity value in lux. */
     private val _light = MutableStateFlow(0.0f)
     val light: StateFlow<Float> = _light.asStateFlow()
 
-    // ***************** Acc
+    // -------------------------------------------------------------------------
+    // Accelerometer
+    // -------------------------------------------------------------------------
+
+    /** Accelerometer sensor instance or null if unavailable. */
     private val accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+
+    /** Indicates whether the device has an accelerometer. */
     private val _hasAccSensor = MutableStateFlow(accSensor != null)
     val hasAccSensor: StateFlow<Boolean> = _hasAccSensor.asStateFlow()
+
+    /** Current accelerometer reading (x, y, z). */
     private val _acc = MutableStateFlow(Triple(0.0f, 0.0f, 0.0f))
     val acc: StateFlow<Triple<Float, Float, Float>> = _acc.asStateFlow()
 
-    // ******************* Proximity
+    // -------------------------------------------------------------------------
+    // Proximity sensor
+    // -------------------------------------------------------------------------
+
+    /** Proximity sensor instance or null if unavailable. */
     private val proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+
+    /** Indicates whether the device has a proximity sensor. */
     private val _hasProximitySensor = MutableStateFlow(proximitySensor != null)
     val hasProximitySensor: StateFlow<Boolean> = _hasProximitySensor.asStateFlow()
+
+    /** Current proximity value in centimeters (or binary depending on hardware). */
     private val _proximity = MutableStateFlow(0.0f)
     val proximity: StateFlow<Float> = _proximity.asStateFlow()
 
 
-    // ******************** Magnetometer
+    // -------------------------------------------------------------------------
+    // Rotation vector / magnetometer (azimuth)
+    // -------------------------------------------------------------------------
+
+    /** Rotation vector sensor used to compute device orientation (azimuth). */
     private val rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
+
+    /** Indicates whether the device supports rotation vector sensor. */
     private val _hasRotationVecorSensor = MutableStateFlow(rotationVectorSensor != null)
     val hasRotationVecorSensor: StateFlow<Boolean> = _hasRotationVecorSensor.asStateFlow()
+
+    /** Current azimuth angle in degrees (0–360°). */
     private val _azimuth= MutableStateFlow(0.0f)
     val azimuth: StateFlow<Float> = _azimuth.asStateFlow()
 
-    // -----------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
+    // Sensor event listener
+    // -------------------------------------------------------------------------
+
+    /**
+     * Shared listener receiving updates from all registered sensors.
+     *
+     * Converts raw [SensorEvent] data into strongly typed values and updates
+     * the corresponding state flows.
+     */
     private val listener = object : SensorEventListener {
         override fun onAccuracyChanged(p0: Sensor?, p1: Int) { }
         override fun onSensorChanged(p0: SensorEvent?) {
@@ -76,6 +133,16 @@ class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
         }
     }
 
+    // -------------------------------------------------------------------------
+    // Public API
+    // -------------------------------------------------------------------------
+
+    /**
+     * Registers listeners for all available sensors.
+     *
+     * Should be called when the UI becomes active (e.g., in `onResume` of
+     * a Compose lifecycle observer).
+     */
     fun startListening() {
         lightSensor?.let {
             sensorManager.registerListener(listener,
@@ -99,6 +166,12 @@ class SensorsVM( private val sensorManager: SensorManager) : ViewModel() {
         }
     }
 
+    /**
+     * Unregisters the shared sensor listener.
+     *
+     * Should be called when the UI becomes inactive (e.g., in `onPause`)
+     * to avoid unnecessary battery drain and CPU usage.
+     */
     fun stopListening() {
         sensorManager.unregisterListener(listener)
     }
