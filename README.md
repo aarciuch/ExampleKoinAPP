@@ -1,4 +1,4 @@
-# 📱 ExampleKoinAPP
+# 📱 ExampleKoinAPP  
 
 A simple Android application built with **Jetpack Compose**, **Koin Dependency Injection**, and **SensorManager**.  
 The app demonstrates modular architecture, MVVM, DI, and real‑time sensor visualization. 
