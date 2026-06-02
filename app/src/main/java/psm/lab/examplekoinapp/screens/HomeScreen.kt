@@ -25,5 +25,8 @@ fun HomeScreen() {
         Row {
             Text(modifier = Modifier.padding(24.dp), text = "Ble ble")
         }
+        Row {
+            Text(modifier = Modifier.padding(24.dp), text = "Ble1 ble1")
+        }
     }
 }
