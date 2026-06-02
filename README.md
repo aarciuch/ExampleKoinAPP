@@ -5,7 +5,7 @@ The app demonstrates modular architecture, MVVM, DI, and real‑time sensor visu
 
 ---
 
-## 📘 API Documentation (Dokka)
+## 📘 API Documentation (Dokka)  
 
 Pełna dokumentacja projektu generowana automatycznie przy każdym pushu:
 
