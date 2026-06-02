@@ -34,6 +34,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
  * component and supports single-top navigation to avoid duplicate destinations
  * in the back stack.
  *
+ *
  * @param navController controller used to manage navigation between screens
  */
 @Composable
