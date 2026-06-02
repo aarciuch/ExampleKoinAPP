@@ -1,5 +1,7 @@
 package psm.lab.examplekoinapp.screens
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -16,5 +18,12 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun HomeScreen() {
-    Text(modifier = Modifier.padding(24.dp), text = "Home screen")
+    Column {
+        Row {
+            Text(modifier = Modifier.padding(24.dp), text = "Home screen")
+        }
+        Row {
+            Text(modifier = Modifier.padding(24.dp), text = "Ble ble")
+        }
+    }
 }
