@@ -41,6 +41,28 @@ import psm.lab.examplekoinapp.R
 import java.lang.Math.cos
 import java.lang.Math.sin
 
+/**
+ * Main dashboard layout displaying all available hardware sensor indicators.
+ *
+ * The grid is divided into two vertical columns:
+ * - Left column: light sensor, proximity sensor, and compass (rotation vector)
+ * - Right column: accelerometer visualizations (X, Y, Z heatmaps and 2D ball)
+ *
+ * Each sensor is conditionally rendered based on its availability flags
+ * provided by the ViewModel. Missing sensors display a descriptive fallback
+ * message using string resources.
+ *
+ * The layout is scrollable to accommodate devices with limited vertical space.
+ *
+ * @param light current light sensor reading in lux
+ * @param acc triple containing accelerometer values (x, y, z)
+ * @param proximity current proximity sensor reading in centimeters
+ * @param azimuth current azimuth angle (0–360°) derived from rotation vector
+ * @param hasLight whether the device has a light sensor
+ * @param hasAcc whether the device has an accelerometer
+ * @param hasProximity whether the device has a proximity sensor
+ * @param hasRotationVector whether the device supports the rotation vector sensor
+ */
 @Composable
 fun SensorsGrid(
     light: Float,
@@ -58,7 +80,7 @@ fun SensorsGrid(
         .fillMaxWidth()
         .verticalScroll(rememberScrollState())) {
 
-        // LEWA KOLUMNA — Light
+        // Left column
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -93,7 +115,7 @@ fun SensorsGrid(
 
         }
 
-        // PRAWA KOLUMNA — X, Y, Z
+        //Right column
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -119,11 +141,21 @@ fun SensorsGrid(
     }
 
 
-    // 🔥 tu dodasz kolejne sensory
+    // 🔥 add next sensors here if you want to :)
     // Row { }
 
 }
 
+/**
+ * Reusable card‑like container used to display individual sensor components.
+ *
+ * Applies padding, rounded corners, and a Material surfaceVariant background.
+ * The card accepts arbitrary composable content, making it suitable for
+ * indicators, charts, or fallback text messages.
+ *
+ * @param modifier optional modifier for external layout adjustments
+ * @param content composable content displayed inside the card
+ */
 @Composable
 fun SensorCard(
     modifier: Modifier = Modifier,
@@ -142,6 +174,12 @@ fun SensorCard(
     }
 }
 
+/**
+ * Maps a Z‑axis accelerometer value to a red→blue heat scale.
+ *
+ * @param z accelerometer Z value in m/s²
+ * @return color representing the normalized Z intensity
+ */
 fun hotColor(z: Float): Color {
     val norm = ((z + 10f) / 20f).coerceIn(0f, 1f)
     return Color.hsl(
@@ -151,6 +189,12 @@ fun hotColor(z: Float): Color {
     )
 }
 
+/**
+ * Maps an X‑axis accelerometer value to a blue→red gradient.
+ *
+ * @param x accelerometer X value in m/s²
+ * @return color representing the normalized X intensity
+ */
 fun coldColor(x: Float): Color {
     val norm = ((x + 10f) / 20f).coerceIn(0f, 1f)
     return Color.hsl(
@@ -160,6 +204,12 @@ fun coldColor(x: Float): Color {
     )
 }
 
+/**
+ * Maps a Y‑axis accelerometer value to a green→yellow gradient.
+ *
+ * @param y accelerometer Y value in m/s²
+ * @return color representing the normalized Y intensity
+ */
 fun neutralColor(y: Float): Color {
     val norm = ((y + 10f) / 20f).coerceIn(0f, 1f)
     return Color.hsl(
@@ -169,7 +219,15 @@ fun neutralColor(y: Float): Color {
     )
 }
 
-
+/**
+ * Heatmap‑style visualization for a single accelerometer axis.
+ *
+ * The background color is computed from the axis value using a
+ * red→blue gradient. The numeric value is displayed in the center.
+ *
+ * @param value accelerometer reading for the selected axis
+ * @param dimension label of the axis (e.g., "X", "Y", "Z")
+ */
 @Composable
 fun AccHotMap(value: Float, dimension: String = "Z") {
     val color = hotColor(value)
@@ -189,6 +247,15 @@ fun AccHotMap(value: Float, dimension: String = "Z") {
     }
 }
 
+/**
+ * Heatmap‑style visualization for a single accelerometer axis.
+ *
+ * The background color is computed from the axis value using a
+ * red→blue gradient. The numeric value is displayed in the center.
+ *
+ * @param value accelerometer reading for the selected axis
+ * @param dimension label of the axis (e.g., "X", "Y", "Z")
+ */
 @Composable
 fun AccColdMap(value: Float, dimension: String  ="X") {
     val color = coldColor(value)
@@ -203,6 +270,15 @@ fun AccColdMap(value: Float, dimension: String  ="X") {
     }
 }
 
+/**
+ * Heatmap‑style visualization for a single accelerometer axis.
+ *
+ * The background color is computed from the axis value using a
+ * red→blue gradient. The numeric value is displayed in the center.
+ *
+ * @param value accelerometer reading for the selected axis
+ * @param dimension label of the axis (e.g., "X", "Y", "Z")
+ */
 @Composable
 fun AccNeutralMap(value: Float, dimension: String = "Y") {
     val color = neutralColor(value)
@@ -217,6 +293,21 @@ fun AccNeutralMap(value: Float, dimension: String = "Y") {
     }
 }
 
+/**
+ * 2D accelerometer visualization representing device tilt.
+ *
+ * A small ball moves inside a square container based on normalized
+ * X and Y accelerometer values. The ball color reflects the Z‑axis
+ * intensity using a red→blue heat scale.
+ *
+ * This component provides an intuitive representation of device
+ * orientation in real time.
+ *
+ * @param x accelerometer X value in m/s²
+ * @param y accelerometer Y value in m/s²
+ * @param z accelerometer Z value in m/s²
+ * @param size size of the square container
+ */
 @Composable
 fun AccBall(
     x: Float,
@@ -259,6 +350,19 @@ fun AccBall(
     }
 }
 
+/**
+ * Circular compass visualization displaying the current azimuth angle.
+ *
+ * The component renders:
+ * - a circular dial with tick marks every 10°
+ * - a rotating needle (red for North, white for South)
+ *
+ * The needle rotation is animated smoothly using tween interpolation.
+ * The azimuth value is expected to be in degrees (0–360°).
+ *
+ * @param azimuth current heading angle in degrees
+ * @param size diameter of the compass widget
+ */
 @Composable
 fun Compass(
     azimuth: Float,
@@ -330,6 +434,17 @@ fun Compass(
         }
     }
 }
+
+/**
+ * Computes a smooth transition between two azimuth angles.
+ *
+ * Prevents abrupt jumps when crossing the 0°/360° boundary by adjusting
+ * the difference to the shortest rotational direction.
+ *
+ * @param prev previous azimuth angle
+ * @param new new azimuth angle
+ * @return adjusted angle ensuring smooth rotation
+ */
 fun smoothAzimuth(prev: Float, new: Float): Float {
     var diff = new - prev
 

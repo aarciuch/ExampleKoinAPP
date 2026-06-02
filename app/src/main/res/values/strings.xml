@@ -1,20 +1,35 @@
 <resources>
-    <string name="app_name">ExampleKoinAPP</string>
 
+    <!--
+        Application
+        Global application-level strings used across the entire project.
+    -->
+    <string name="app_name">ExampleKoinAPP</string>
     <string name="top_bar_title">Android Dev Showcase</string>
 
+    <!--
+        Navigation
+        Labels used in the bottom navigation bar and navigation graph.
+    -->
     <string name="home">Home</string>
-
     <string name="page_1">Sensors</string>
-    <string name="light_value">Light value = %.2f</string>
+    <string name="page_2">Page 2</string>
+
+    <!--
+     Sensor values
+     Formatted values displayed in the UI for available sensors.
+    -->
+    <string name="light_value">Light value = %.2f lx</string>
+    <string name="proximity_value">Proximity value = %.2f</string>
+    <string name="azimuth_value">Azimuth = %.0f°</string>
+
+    <!--
+       Sensor availability messages
+       Displayed when a given hardware sensor is not present on the device.
+    -->
     <string name="sensor_light_unavailable">Light sensor is unavailable</string>
     <string name="sensor_acc_unavailable">Accelerometer is unavailable</string>
-    <string name="proximity_value">proximity value = %.2f</string>
     <string name="sensor_proximity_unavailable">Proximity sensor is unavailable</string>
     <string name="sensor_rotation_vector_unavailable">Rotation vector sensor is unavailable</string>
-    <string name="azimuth_value">azimuth = %.0f°</string>
-
-
-    <string name="page_2">Page 2</string>
 
 </resources>
