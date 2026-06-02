@@ -52,3 +52,6 @@ Pełna dokumentacja projektu generowana automatycznie przy każdym pushu:
 
 Debug build:
 
+## Comments
+Project is still under development.
+
