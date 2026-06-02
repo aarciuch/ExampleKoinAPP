@@ -1,0 +1,65 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:psm.lab.examplekoinapp.screens////PointingToDeclaration/app/psm.lab.examplekoinapp.screens/index.html
+$dokka.location:psm.lab.examplekoinapp.screens//AccBall/#kotlin.Float#kotlin.Float#kotlin.Float#androidx.compose.ui.unit.Dp/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-ball.html
+$dokka.location:psm.lab.examplekoinapp.screens//AccColdMap/#kotlin.Float#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-cold-map.html
+$dokka.location:psm.lab.examplekoinapp.screens//AccHotMap/#kotlin.Float#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-hot-map.html
+$dokka.location:psm.lab.examplekoinapp.screens//AccNeutralMap/#kotlin.Float#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-neutral-map.html
+$dokka.location:psm.lab.examplekoinapp.screens//BottomNavigationBar/#androidx.navigation.NavController/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-bottom-navigation-bar.html
+$dokka.location:psm.lab.examplekoinapp.screens//Compass/#kotlin.Float#androidx.compose.ui.unit.Dp/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-compass.html
+$dokka.location:psm.lab.examplekoinapp.screens//HomeScreen/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-home-screen.html
+$dokka.location:psm.lab.examplekoinapp.screens//LightIndicator/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-light-indicator.html
+$dokka.location:psm.lab.examplekoinapp.screens//Page1/#psm.lab.examplekoinapp.sensors.SensorsVM/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-page1.html
+$dokka.location:psm.lab.examplekoinapp.screens//Page2/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-page2.html
+$dokka.location:psm.lab.examplekoinapp.screens//ProximityIndicator/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-proximity-indicator.html
+$dokka.location:psm.lab.examplekoinapp.screens//SensorCard/#androidx.compose.ui.Modifier#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-sensor-card.html
+$dokka.location:psm.lab.examplekoinapp.screens//SensorsGrid/#kotlin.Float#kotlin.Triple[kotlin.Float,kotlin.Float,kotlin.Float]#kotlin.Float#kotlin.Float#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-sensors-grid.html
+$dokka.location:psm.lab.examplekoinapp.screens//TopBar/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-top-bar.html
+$dokka.location:psm.lab.examplekoinapp.screens//coldColor/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/cold-color.html
+$dokka.location:psm.lab.examplekoinapp.screens//hotColor/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/hot-color.html
+$dokka.location:psm.lab.examplekoinapp.screens//neutralColor/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/neutral-color.html
+$dokka.location:psm.lab.examplekoinapp.screens//smoothAzimuth/#kotlin.Float#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/smooth-azimuth.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens.HOME///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/psm.lab.examplekoinapp.screens/-screens/-h-o-m-e/index.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens.PAGE1///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/psm.lab.examplekoinapp.screens/-screens/-p-a-g-e1/index.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens.PAGE2///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}app/psm.lab.examplekoinapp.screens/-screens/-p-a-g-e2/index.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens///PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/index.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/entries/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/entries.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/icon/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/icon.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/labelRes/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/label-res.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/route/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/route.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/valueOf/#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/value-of.html
+$dokka.location:psm.lab.examplekoinapp.screens/Screens/values/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-screens/values.html
+$dokka.location:psm.lab.examplekoinapp.sensors////PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/index.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM///PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/index.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/SensorsVM/#android.hardware.SensorManager/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/-sensors-v-m.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/acc/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/acc.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/azimuth/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/azimuth.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/hasAccSensor/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/has-acc-sensor.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/hasLightSensor/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/has-light-sensor.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/hasProximitySensor/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/has-proximity-sensor.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/hasRotationVecorSensor/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/has-rotation-vecor-sensor.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/light/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/light.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/proximity/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/proximity.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/startListening/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/start-listening.html
+$dokka.location:psm.lab.examplekoinapp.sensors/SensorsVM/stopListening/#/PointingToDeclaration/app/psm.lab.examplekoinapp.sensors/-sensors-v-m/stop-listening.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme////PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/index.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//ExampleKoinAPPTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-example-koin-a-p-p-theme.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//Pink40/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-pink40.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//Pink80/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-pink80.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//Purple40/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-purple40.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//Purple80/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-purple80.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//PurpleGrey40/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-purple-grey40.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//PurpleGrey80/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-purple-grey80.html
+$dokka.location:psm.lab.examplekoinapp.ui.theme//Typography/#/PointingToDeclaration/app/psm.lab.examplekoinapp.ui.theme/-typography.html
+$dokka.location:psm.lab.examplekoinapp////PointingToDeclaration/app/psm.lab.examplekoinapp/index.html
+$dokka.location:psm.lab.examplekoinapp//sensorModule/#/PointingToDeclaration/app/psm.lab.examplekoinapp/sensor-module.html
+$dokka.location:psm.lab.examplekoinapp/MainActivity///PointingToDeclaration/app/psm.lab.examplekoinapp/-main-activity/index.html
+$dokka.location:psm.lab.examplekoinapp/MainActivity/MainActivity/#/PointingToDeclaration/app/psm.lab.examplekoinapp/-main-activity/-main-activity.html
+$dokka.location:psm.lab.examplekoinapp/MyApp///PointingToDeclaration/app/psm.lab.examplekoinapp/-my-app/index.html
+$dokka.location:psm.lab.examplekoinapp/MyApp/MyApp/#/PointingToDeclaration/app/psm.lab.examplekoinapp/-my-app/-my-app.html
+$dokka.location:psm.lab.examplekoinapp/MyApp/onCreate/#/PointingToDeclaration/app/psm.lab.examplekoinapp/-my-app/on-create.html
+psm.lab.examplekoinapp
+psm.lab.examplekoinapp.screens
+psm.lab.examplekoinapp.sensors
+psm.lab.examplekoinapp.ui.theme
+
