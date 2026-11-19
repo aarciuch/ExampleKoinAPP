@@ -6,7 +6,9 @@ import psm.lab.examplekoinapp.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Adb
 import androidx.compose.material.icons.filled.Android
+import androidx.compose.material.icons.filled.Camera
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Sensors
 
 /**
  * Enumeration defining all navigation destinations used in the application.
@@ -35,14 +37,14 @@ enum class Screens(
     PAGE1(
         "page_1",
         labelRes = R.string.page_1,
-        icon = Icons.Default.Android
+        icon = Icons.Default.Sensors
     ),
 
     /** Secondary placeholder screen used for demonstration or future expansion. */
     PAGE2(
         "page_2",
         labelRes = R.string.page_2,
-        icon = Icons.Default.Adb
+        icon = Icons.Default.Camera
     ),
 
 
