@@ -6,6 +6,7 @@ $dokka.location:psm.lab.examplekoinapp.screens//AccColdMap/#kotlin.Float#kotlin.
 $dokka.location:psm.lab.examplekoinapp.screens//AccHotMap/#kotlin.Float#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-hot-map.html
 $dokka.location:psm.lab.examplekoinapp.screens//AccNeutralMap/#kotlin.Float#kotlin.String/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-acc-neutral-map.html
 $dokka.location:psm.lab.examplekoinapp.screens//BottomNavigationBar/#androidx.navigation.NavController/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-bottom-navigation-bar.html
+$dokka.location:psm.lab.examplekoinapp.screens//CameraScreen/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-camera-screen.html
 $dokka.location:psm.lab.examplekoinapp.screens//Compass/#kotlin.Float#androidx.compose.ui.unit.Dp/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-compass.html
 $dokka.location:psm.lab.examplekoinapp.screens//HomeScreen/#/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-home-screen.html
 $dokka.location:psm.lab.examplekoinapp.screens//LightIndicator/#kotlin.Float/PointingToDeclaration/app/psm.lab.examplekoinapp.screens/-light-indicator.html
