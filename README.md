@@ -7,7 +7,7 @@ The app demonstrates modular architecture, MVVM, DI, and real‑time sensor visu
 
 ## 📘 API Documentation (Dokka)  
 
-Pełna dokumentacja projektu generowana automatycznie przy każdym pushu:
+Pełna dokumentacja projektu generowana automatycznie przy każdym pushu: 
 
 👉 **https://aarciuch.github.io/ExampleKoinAPP/**
 
